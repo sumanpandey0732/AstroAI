@@ -1,0 +1,67 @@
+{
+  "name": "ai-palm-reader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Palm Reader - Tarot & Astrology Guidance PWA App",
+  "author": "AI Palm Reader Team",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^11.0.8",
+    "date-fns": "^3.3.1",
+    "zustand": "^4.5.2",
+    "react-swipeable": "^7.0.1",
+    "browser-image-compression": "^2.0.2",
+    "idb-keyval": "^6.2.1",
+    "clsx": "^2.1.0",
+    "react-intersection-observer": "^9.8.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.6",
+    "vite-plugin-pwa": "^0.19.2",
+    "workbox-window": "^7.0.0",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": ["AstroAI","AI astro","Astro AI",
+    "palm-reading",
+    "tarot",
+    "astrology",
+    "horoscope",
+    "pwa",
+    "react",
+    "ai",
+    "spiritual",
+    "guidance"
+  ]
+    }
