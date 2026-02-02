@@ -27,6 +27,9 @@ const PrivacyPolicyScreen = React.lazy(() => import('./screens/PrivacyPolicyScre
 const AboutScreen = React.lazy(() => import('./screens/AboutScreen'));
 const TermsScreen = React.lazy(() => import('./screens/TermsScreen'));
 
+// 🆕 NEW: Rashifal Screen (SerpAPI Integration)
+const RashifalScreen = React.lazy(() => import('./screens/RashifalScreen'));
+
 function AppContent() {
   const { currentScreen } = useNavigation();
 
@@ -51,6 +54,10 @@ function AppContent() {
       case 'PRIVACY': return <PrivacyPolicyScreen />;
       case 'ABOUT': return <AboutScreen />;
       case 'TERMS': return <TermsScreen />;
+      
+      // 🆕 NEW: Daily Rashifal (SerpAPI)
+      case 'RASHIFAL': return <RashifalScreen />;
+      
       default: return <SplashScreen />;
     }
   };
