@@ -565,4 +565,237 @@ export default {
           '0%': { transform: 'translateY(100%)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        slideOutBottom
+                slideOutBottom: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(100%)', opacity: '0' },
+        },
+
+        // Glow Keyframes
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.4)' },
+          '50%': { boxShadow: '0 0 40px rgba(139, 92, 246, 0.8)' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 5px rgba(139, 92, 246, 0.4), 0 0 10px rgba(139, 92, 246, 0.3)' },
+          '100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(139, 92, 246, 0.4)' },
+        },
+        glowPulse: {
+          '0%, 100%': { 
+            boxShadow: '0 0 10px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.2)' 
+          },
+          '50%': { 
+            boxShadow: '0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)' 
+          },
+        },
+
+        // Spin Keyframes
+        spinReverse: {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+
+        // Float Keyframes
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+
+        // Bounce Keyframes
+        bounceSoft: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        bounceIn: {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '50%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+
+        // Shake Keyframes
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
+          '20%, 40%, 60%, 80%': { transform: 'translateX(5px)' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+
+        // Cosmic Keyframes
+        twinkle: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.5', transform: 'scale(0.8)' },
+        },
+        orbit: {
+          '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg) translateX(100px) rotate(-360deg)' },
+        },
+        cosmicFloat: {
+          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%': { transform: 'translate(10px, -10px) rotate(2deg)' },
+          '50%': { transform: 'translate(0, -20px) rotate(0deg)' },
+          '75%': { transform: 'translate(-10px, -10px) rotate(-2deg)' },
+        },
+        starPulse: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)', filter: 'brightness(1)' },
+          '50%': { opacity: '0.7', transform: 'scale(1.2)', filter: 'brightness(1.3)' },
+        },
+        nebula: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+
+        // Card Keyframes
+        cardFlip: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
+        cardDeal: {
+          '0%': { transform: 'translateY(-50px) rotate(-10deg)', opacity: '0' },
+          '100%': { transform: 'translateY(0) rotate(0deg)', opacity: '1' },
+        },
+        cardHover: {
+          '0%': { transform: 'translateY(0) scale(1)' },
+          '100%': { transform: 'translateY(-10px) scale(1.02)' },
+        },
+
+        // Shimmer Keyframes
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+
+        // Typing Keyframes
+        typing: {
+          '0%, 100%': { opacity: '0.2' },
+          '50%': { opacity: '1' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
+
+        // Loading Keyframes
+        loadingDots: {
+          '0%, 80%, 100%': { transform: 'scale(0)' },
+          '40%': { transform: 'scale(1)' },
+        },
+        progress: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+
+        // Scan Keyframes
+        scanLine: {
+          '0%, 100%': { top: '0%', opacity: '1' },
+          '50%': { top: '100%', opacity: '0.5' },
+        },
+        palmGlow: {
+          '0%, 100%': { 
+            filter: 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))' 
+          },
+          '50%': { 
+            filter: 'drop-shadow(0 0 30px rgba(139, 92, 246, 0.8))' 
+          },
+        },
+
+        // Ripple Keyframes
+        ripple: {
+          '0%': { transform: 'scale(0)', opacity: '0.5' },
+          '100%': { transform: 'scale(4)', opacity: '0' },
+        },
+
+        // Modal Keyframes
+        modalIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+        },
+        modalOut: {
+          '0%': { opacity: '1', transform: 'scale(1)' },
+          '100%': { opacity: '0', transform: 'scale(0.95)' },
+        },
+        backdropIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        backdropOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+
+        // Toast Keyframes
+        toastIn: {
+          '0%': { transform: 'translateY(100%) scale(0.9)', opacity: '0' },
+          '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+        },
+        toastOut: {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+          '100%': { transform: 'translateY(100%) scale(0.9)', opacity: '0' },
+        },
+
+        // Heartbeat Keyframes
+        heartbeat: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '14%': { transform: 'scale(1.1)' },
+          '28%': { transform: 'scale(1)' },
+          '42%': { transform: 'scale(1.1)' },
+          '70%': { transform: 'scale(1)' },
+        },
+
+        // Gradient Keyframes
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        gradientY: {
+          '0%, 100%': { backgroundPosition: '50% 0%' },
+          '50%': { backgroundPosition: '50% 100%' },
+        },
+        gradientXY: {
+          '0%, 100%': { backgroundPosition: '0% 0%' },
+          '25%': { backgroundPosition: '100% 0%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '75%': { backgroundPosition: '0% 100%' },
+        },
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // ⏱️ TRANSITION TIMING FUNCTIONS
+      // ═══════════════════════════════════════════════════════════
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
+        'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+        'in-out-expo': 'cubic-bezier(0.87, 0, 0.13, 1)',
+        'in-back': 'cubic-bezier(0.6, -0.28, 0.735, 0.045)',
+        'out-back': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'in-out-back': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'elastic': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // ⏱️ TRANSITION DURATION
+      // ═══════════════════════════════════════════════════════════
+      transitionDuration: {
+        '0': '0ms',
+        '50': '50ms',
+        '100': '100ms',
+        '150': '150ms',
+        '200': '200ms',
+        '250': '250ms',
+        '300': '300ms',
+        '350': '350ms',
+        '400': '400ms',
+        '450': '450ms',
+        '500': '500ms',
+        '600': '600ms',
+        '700': '700ms',
+        '800': '800ms',
+        '900': '900ms',
+        '1000': '1000ms',
+        '1500': '1500ms',
+        '2000': '2000ms',
+      },
