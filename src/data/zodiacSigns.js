@@ -1,0 +1,283 @@
+/**
+ * ♈ ZODIAC SIGNS DATA
+ * Detailed information about all 12 western zodiac signs.
+ */
+
+export const zodiacSigns = [
+  // ═══════════════════════════════════════════════════════════
+  // 🔥 FIRE SIGNS
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'aries',
+    name: 'Aries',
+    symbol: '♈',
+    dateRange: 'Mar 21 - Apr 19',
+    element: 'Fire',
+    quality: 'Cardinal',
+    ruler: 'Mars',
+    color: 'Red',
+    day: 'Tuesday',
+    stone: 'Diamond',
+    numbers: [1, 8, 17],
+    traits: {
+      strengths: ['Courageous', 'Determined', 'Confident', 'Enthusiastic', 'Optimistic'],
+      weaknesses: ['Impatient', 'Moody', 'Short-tempered', 'Impulsive', 'Aggressive'],
+      likes: ['Comfortable clothes', 'Taking on leadership roles', 'Physical challenges', 'Individual sports'],
+      dislikes: ['Inactivity', 'Delays', 'Work that does not use one\'s talents'],
+    },
+    about: "Aries is the first sign of the zodiac, and that's pretty much how those born under this sign see themselves: first. Aries are the leaders of the pack, first in line to get things going. Whether or not everything gets done is another question altogether, for an Aries prefers to initiate rather than to complete.",
+    compatibility: ['Leo', 'Sagittarius', 'Gemini', 'Aquarius'],
+  },
+  {
+    id: 'leo',
+    name: 'Leo',
+    symbol: '♌',
+    dateRange: 'Jul 23 - Aug 22',
+    element: 'Fire',
+    quality: 'Fixed',
+    ruler: 'Sun',
+    color: 'Gold, Yellow, Orange',
+    day: 'Sunday',
+    stone: 'Peridot',
+    numbers: [1, 3, 10, 19],
+    traits: {
+      strengths: ['Creative', 'Passionate', 'Generous', 'Warm-hearted', 'Cheerful', 'Humorous'],
+      weaknesses: ['Arrogant', 'Stubborn', 'Self-centered', 'Lazy', 'Inflexible'],
+      likes: ['Theater', 'Taking holidays', 'Being admired', 'Expensive things', 'Bright colors', 'Fun with friends'],
+      dislikes: ['Being ignored', 'Facing difficult reality', 'Not being treated like a king or queen'],
+    },
+    about: "Leo is ruled by the Sun, the center of the universe, and Leos are often the center of attention. They are natural born leaders, confident, creative, and dominant. They are extremely difficult to resist and can achieve anything they want to in any area of life they commit to.",
+    compatibility: ['Aries', 'Sagittarius', 'Gemini', 'Libra'],
+  },
+  {
+    id: 'sagittarius',
+    name: 'Sagittarius',
+    symbol: '♐',
+    dateRange: 'Nov 22 - Dec 21',
+    element: 'Fire',
+    quality: 'Mutable',
+    ruler: 'Jupiter',
+    color: 'Blue',
+    day: 'Thursday',
+    stone: 'Topaz',
+    numbers: [3, 7, 9, 12, 21],
+    traits: {
+      strengths: ['Generous', 'Idealistic', 'Great sense of humor'],
+      weaknesses: ['Promises more than can deliver', 'Very impatient', 'Will say anything no matter how undiplomatic'],
+      likes: ['Freedom', 'Travel', 'Philosophy', 'Being outdoors'],
+      dislikes: ['Clingy people', 'Being constrained', 'Off-the-wall theories', 'Details'],
+    },
+    about: "Curious and energetic, Sagittarius is one of the biggest travelers among all zodiac signs. Their open mind and philosophical view motivates them to wander around the world in search of the meaning of life. Sagittarius is extrovert, optimistic and enthusiastic, and likes changes.",
+    compatibility: ['Aries', 'Leo', 'Libra', 'Aquarius'],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // 🌍 EARTH SIGNS
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'taurus',
+    name: 'Taurus',
+    symbol: '♉',
+    dateRange: 'Apr 20 - May 20',
+    element: 'Earth',
+    quality: 'Fixed',
+    ruler: 'Venus',
+    color: 'Green, Pink',
+    day: 'Friday',
+    stone: 'Emerald',
+    numbers: [2, 6, 9, 12, 24],
+    traits: {
+      strengths: ['Reliable', 'Patient', 'Practical', 'Devoted', 'Responsible', 'Stable'],
+      weaknesses: ['Stubborn', 'Possessive', 'Uncompromising'],
+      likes: ['Gardening', 'Cooking', 'Music', 'Romance', 'High quality clothes', 'Working with hands'],
+      dislikes: ['Sudden changes', 'Complications', 'Insecurity of any kind', 'Synthetic fabrics'],
+    },
+    about: "Practical and well-grounded, Taurus is the sign that harvests the fruits of labor. They feel the need to always be surrounded by love and beauty, turned to the material world, hedonism, and physical pleasures. People born with their Sun in Taurus are sensual and tactile.",
+    compatibility: ['Cancer', 'Virgo', 'Capricorn', 'Pisces'],
+  },
+  {
+    id: 'virgo',
+    name: 'Virgo',
+    symbol: '♍',
+    dateRange: 'Aug 23 - Sep 22',
+    element: 'Earth',
+    quality: 'Mutable',
+    ruler: 'Mercury',
+    color: 'Grey, Beige, Pale-Yellow',
+    day: 'Wednesday',
+    stone: 'Sapphire',
+    numbers: [5, 14, 15, 23, 32],
+    traits: {
+      strengths: ['Loyal', 'Analytical', 'Kind', 'Hardworking', 'Practical'],
+      weaknesses: ['Shyness', 'Worry', 'Overly critical of self and others', 'All work and no play'],
+      likes: ['Animals', 'Healthy food', 'Books', 'Nature', 'Cleanliness'],
+      dislikes: ['Rudeness', 'Asking for help', 'Taking center stage'],
+    },
+    about: "Virgos are always paying attention to the smallest details and their deep sense of humanity makes them one of the most careful signs of the zodiac. Their methodical approach to life ensures that nothing is left to chance, and although they are often tender, their heart might be closed for the outer world.",
+    compatibility: ['Taurus', 'Capricorn', 'Cancer', 'Scorpio'],
+  },
+  {
+    id: 'capricorn',
+    name: 'Capricorn',
+    symbol: '♑',
+    dateRange: 'Dec 22 - Jan 19',
+    element: 'Earth',
+    quality: 'Cardinal',
+    ruler: 'Saturn',
+    color: 'Brown, Black',
+    day: 'Saturday',
+    stone: 'Garnet',
+    numbers: [4, 8, 13, 22],
+    traits: {
+      strengths: ['Responsible', 'Disciplined', 'Self-control', 'Good managers'],
+      weaknesses: ['Know-it-all', 'Unforgiving', 'Condescending', 'Expecting the worst'],
+      likes: ['Family', 'Tradition', 'Music', 'Understated status', 'Quality craftsmanship'],
+      dislikes: ['Almost everything at some point'],
+    },
+    about: "Capricorn is a sign that represents time and responsibility, and its representatives are traditional and often very serious by nature. These individuals possess an inner state of independence that enables significant progress both in their personal and professional lives.",
+    compatibility: ['Taurus', 'Virgo', 'Scorpio', 'Pisces'],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // 🌬️ AIR SIGNS
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'gemini',
+    name: 'Gemini',
+    symbol: '♊',
+    dateRange: 'May 21 - Jun 20',
+    element: 'Air',
+    quality: 'Mutable',
+    ruler: 'Mercury',
+    color: 'Light-Green, Yellow',
+    day: 'Wednesday',
+    stone: 'Pearl',
+    numbers: [5, 7, 14, 23],
+    traits: {
+      strengths: ['Gentle', 'Affectionate', 'Curious', 'Adaptable', 'Ability to learn quickly and exchange ideas'],
+      weaknesses: ['Nervous', 'Inconsistent', 'Indecisive'],
+      likes: ['Music', 'Books', 'Magazines', 'Chats with nearly anyone', 'Short trips around the town'],
+      dislikes: ['Being alone', 'Being confined', 'Repetition and routine'],
+    },
+    about: "Expressive and quick-witted, Gemini represents two different personalities in one and you will never be sure which one you will face. They are sociable, communicative and ready for fun, with a tendency to suddenly get serious, thoughtful and restless.",
+    compatibility: ['Libra', 'Aquarius', 'Aries', 'Leo'],
+  },
+  {
+    id: 'libra',
+    name: 'Libra',
+    symbol: '♎',
+    dateRange: 'Sep 23 - Oct 22',
+    element: 'Air',
+    quality: 'Cardinal',
+    ruler: 'Venus',
+    color: 'Pink, Green',
+    day: 'Friday',
+    stone: 'Opal',
+    numbers: [4, 6, 13, 15, 24],
+    traits: {
+      strengths: ['Cooperative', 'Diplomatic', 'Gracious', 'Fair-minded', 'Social'],
+      weaknesses: ['Indecisive', 'Avoids confrontations', 'Will carry a grudge', 'Self-pity'],
+      likes: ['Harmony', 'Gentleness', 'Sharing with others', 'The outdoors'],
+      dislikes: ['Violence', 'Injustice', 'Loudmouths', 'Conformity'],
+    },
+    about: "People born under the sign of Libra are peaceful, fair, and they hate being alone. Partnership is very important for them, as their mirror and someone giving them the ability to be the mirror themselves. These individuals are fascinated by balance and symmetry.",
+    compatibility: ['Gemini', 'Aquarius', 'Leo', 'Sagittarius'],
+  },
+  {
+    id: 'aquarius',
+    name: 'Aquarius',
+    symbol: '♒',
+    dateRange: 'Jan 20 - Feb 18',
+    element: 'Air',
+    quality: 'Fixed',
+    ruler: 'Uranus',
+    color: 'Light-Blue, Silver',
+    day: 'Saturday',
+    stone: 'Amethyst',
+    numbers: [4, 7, 11, 22, 29],
+    traits: {
+      strengths: ['Progressive', 'Original', 'Independent', 'Humanitarian'],
+      weaknesses: ['Runs from emotional expression', 'Temperamental', 'Uncompromising', 'Aloof'],
+      likes: ['Fun with friends', 'Helping others', 'Fighting for causes', 'Intellectual conversation'],
+      dislikes: ['Limitations', 'Broken promises', 'Being lonely', 'Dull or boring situations'],
+    },
+    about: "Aquarius-born are shy and quiet , but on the other hand they can be eccentric and energetic. However, in both cases, they are deep thinkers and highly intellectual people who love helping others. They are able to see without prejudice, on both sides, which makes them people who can easily solve problems.",
+    compatibility: ['Gemini', 'Libra', 'Aries', 'Sagittarius'],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // 💧 WATER SIGNS
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'cancer',
+    name: 'Cancer',
+    symbol: '♋',
+    dateRange: 'Jun 21 - Jul 22',
+    element: 'Water',
+    quality: 'Cardinal',
+    ruler: 'Moon',
+    color: 'White',
+    day: 'Monday',
+    stone: 'Ruby',
+    numbers: [2, 3, 15, 20],
+    traits: {
+      strengths: ['Tenacious', 'Highly imaginative', 'Loyal', 'Emotional', 'Sympathetic', 'Persuasive'],
+      weaknesses: ['Moody', 'Pessimistic', 'Suspicious', 'Manipulative', 'Insecure'],
+      likes: ['Art', 'Home-based hobbies', 'Relaxing near or in water', 'Helping loved ones', 'A good meal with friends'],
+      dislikes: ['Strangers', 'Any criticism of Mom', 'Revealing of personal life'],
+    },
+    about: "Deeply intuitive and sentimental, Cancer can be one of the most challenging zodiac signs to get to know. They are very emotional and sensitive, and care deeply about matters of the family and their home. Cancer is sympathetic and attached to people they keep close.",
+    compatibility: ['Scorpio', 'Pisces', 'Taurus', 'Virgo'],
+  },
+  {
+    id: 'scorpio',
+    name: 'Scorpio',
+    symbol: '♏',
+    dateRange: 'Oct 23 - Nov 21',
+    element: 'Water',
+    quality: 'Fixed',
+    ruler: 'Pluto',
+    color: 'Scarlet, Red, Rust',
+    day: 'Tuesday',
+    stone: 'Topaz',
+    numbers: [8, 11, 18, 22],
+    traits: {
+      strengths: ['Resourceful', 'Brave', 'Passionate', 'Stubborn', 'A true friend'],
+      weaknesses: ['Distrusting', 'Jealous', 'Secretive', 'Violent'],
+      likes: ['Truth', 'Facts', 'Being right', 'Longtime friends', 'Teasing', 'A grand passion'],
+      dislikes: ['Dishonesty', 'Revealing secrets', 'Passive people'],
+    },
+    about: "Scorpio-born are passionate and assertive people. They are determined and decisive, and will research until they find out the truth. Scorpio is a great leader, always aware of the situation and also features prominently in resourcefulness.",
+    compatibility: ['Cancer', 'Pisces', 'Virgo', 'Capricorn'],
+  },
+  {
+    id: 'pisces',
+    name: 'Pisces',
+    symbol: '♓',
+    dateRange: 'Feb 19 - Mar 20',
+    element: 'Water',
+    quality: 'Mutable',
+    ruler: 'Neptune',
+    color: 'Mauve, Lilac, Purple, Violet, Sea green',
+    day: 'Thursday',
+    stone: 'Aquamarine',
+    numbers: [3, 9, 12, 15, 18, 24],
+    traits: {
+      strengths: ['Compassionate', 'Artistic', 'Intuitive', 'Gentle', 'Wise', 'Musical'],
+      weaknesses: ['Fearful', 'Overly trusting', 'Sad', 'Desire to escape reality', 'Can be a victim or a martyr'],
+      likes: ['Being alone', 'Sleeping', 'Music', 'Romance', 'Visual media', 'Swimming', 'Spiritual themes'],
+      dislikes: ['Know-it-all', 'Being criticized', 'The past coming back to haunt', 'Cruelty of any kind'],
+    },
+    about: "Pisces are very friendly, so they often find themselves in a company of very different people. Pisces are selfless, they are always willing to help others, without hoping to get anything back. Pisces is a Water sign and as such this zodiac sign is characterized by empathy and expressed emotional capacity.",
+    compatibility: ['Cancer', 'Scorpio', 'Taurus', 'Capricorn'],
+  },
+];
+
+// Helper to find sign by ID
+export const getZodiacById = (id) => zodiacSigns.find(sign => sign.id === id);
+
+// Helper to check compatibility
+export const isCompatible = (sign1, sign2) => {
+  const s1 = getZodiacById(sign1.toLowerCase());
+  return s1 ? s1.compatibility.includes(sign2) : false;
+};
