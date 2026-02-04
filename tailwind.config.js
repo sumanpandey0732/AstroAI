@@ -799,3 +799,233 @@ export default {
         '1500': '1500ms',
         '2000': '2000ms',
       },
+      // ═══════════════════════════════════════════════════════════
+      // 📱 SCREENS (BREAKPOINTS)
+      // ═══════════════════════════════════════════════════════════
+      screens: {
+        'xs': '375px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        'mobile': { 'max': '639px' },
+        'tablet': { 'min': '640px', 'max': '1023px' },
+        'desktop': { 'min': '1024px' },
+        'short': { 'raw': '(max-height: 640px)' },
+        'tall': { 'raw': '(min-height: 800px)' },
+        'touch': { 'raw': '(hover: none)' },
+        'hover-device': { 'raw': '(hover: hover)' },
+        'standalone': { 'raw': '(display-mode: standalone)' },
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // 🎭 Z-INDEX
+      // ═══════════════════════════════════════════════════════════
+      zIndex: {
+        '0': '0',
+        '1': '1',
+        '2': '2',
+        '5': '5',
+        '10': '10',
+        '20': '20',
+        '30': '30',
+        '40': '40',
+        '50': '50',
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+        'dropdown': '1000',
+        'sticky': '1020',
+        'fixed': '1030',
+        'modal-backdrop': '1040',
+        'modal': '1050',
+        'popover': '1060',
+        'tooltip': '1070',
+        'toast': '1080',
+        'max': '9999',
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // 📐 ASPECT RATIO
+      // ═══════════════════════════════════════════════════════════
+      aspectRatio: {
+        'auto': 'auto',
+        'square': '1 / 1',
+        'video': '16 / 9',
+        'portrait': '3 / 4',
+        'landscape': '4 / 3',
+        'card': '2 / 3',
+        'tarot': '5 / 8',
+        'wide': '21 / 9',
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // 🖼️ BACKDROP BLUR
+      // ═══════════════════════════════════════════════════════════
+      backdropBlur: {
+        'none': '0',
+        'xs': '2px',
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '40px',
+        '3xl': '64px',
+        'glass': '20px',
+        'cosmic': '30px',
+      },
+
+      // ═══════════════════════════════════════════════════════════
+      // 🌓 OPACITY
+      // ═══════════════════════════════════════════════════════════
+      opacity: {
+        '0': '0',
+        '2': '0.02',
+        '3': '0.03',
+        '4': '0.04',
+        '5': '0.05',
+        '8': '0.08',
+        '10': '0.1',
+        '15': '0.15',
+        '20': '0.2',
+        '25': '0.25',
+        '30': '0.3',
+        '35': '0.35',
+        '40': '0.4',
+        '45': '0.45',
+        '50': '0.5',
+        '55': '0.55',
+        '60': '0.6',
+        '65': '0.65',
+        '70': '0.7',
+        '75': '0.75',
+        '80': '0.8',
+        '85': '0.85',
+        '90': '0.9',
+        '95': '0.95',
+        '100': '1',
+      },
+    },
+  },    },
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // 🔌 PLUGINS
+  // ═══════════════════════════════════════════════════════════
+  plugins: [
+    // Custom Plugin: Glass Morphism Utilities
+    function({ addUtilities }) {
+      addUtilities({
+        '.glass': {
+          background: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+        },
+        '.glass-dark': {
+          background: 'rgba(0, 0, 0, 0.3)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+        },
+        '.glass-purple': {
+          background: 'rgba(139, 92, 246, 0.15)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(139, 92, 246, 0.2)',
+        },
+        '.glass-card': {
+          background: 'rgba(255, 255, 255, 0.08)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.12)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+        },
+        '.glass-button': {
+          background: 'rgba(139, 92, 246, 0.2)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid rgba(139, 92, 246, 0.3)',
+        },
+      });
+    },
+
+    // Custom Plugin: Text Glow Utilities
+    function({ addUtilities }) {
+      addUtilities({
+        '.text-glow': {
+          textShadow: '0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3)',
+        },
+        '.text-glow-cyan': {
+          textShadow: '0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 245, 255, 0.3)',
+        },
+        '.text-glow-gold': {
+          textShadow: '0 0 10px rgba(251, 191, 36, 0.5), 0 0 20px rgba(251, 191, 36, 0.3)',
+        },
+      });
+    },
+
+    // Custom Plugin: Gradient Text Utilities
+    function({ addUtilities }) {
+      addUtilities({
+        '.gradient-text': {
+          background: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        },
+        '.gradient-text-gold': {
+          background: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        },
+      });
+    },
+
+    // Custom Plugin: Scrollbar Utilities
+    function({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        },
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '6px',
+            height: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: 'rgba(255, 255, 255, 0.1)',
+            borderRadius: '3px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: 'rgba(139, 92, 246, 0.5)',
+            borderRadius: '3px',
+          },
+        },
+      });
+    },
+
+    // Custom Plugin: Safe Area Utilities
+    function({ addUtilities }) {
+      addUtilities({
+        '.pt-safe': { paddingTop: 'env(safe-area-inset-top)' },
+        '.pb-safe': { paddingBottom: 'env(safe-area-inset-bottom)' },
+        '.pl-safe': { paddingLeft: 'env(safe-area-inset-left)' },
+        '.pr-safe': { paddingRight: 'env(safe-area-inset-right)' },
+        '.min-h-screen-safe': {
+          minHeight: 'calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        },
+      });
+    },
+  ],
+};
