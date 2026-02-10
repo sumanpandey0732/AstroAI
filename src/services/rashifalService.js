@@ -1,78 +1,71 @@
 /**
- * 🌟 Rashifal Logic Service
- * Manages caching and retrieval of Daily Horoscope.
+ * 🌟 RASHIFAL LOGIC SERVICE
+ * Manages caching and retrieval of Daily Rashifal.
  * Prevents excessive API calls by storing today's result locally.
  */
 
 import { fetchDailyRashifal } from './serpApiService';
-import { storageService } from './storageService';
-import { config } from '../config/appConfig';
 
-const CACHE_KEY = config.storage.lastRashifal;
+const CACHE_KEY_PREFIX = 'astroai_rashifal_';
 
 /**
  * Get Rashifal for the user (Check Cache -> Then API)
- * @param {string} zodiacSign - English name (e.g., 'Aries')
- * @param {string} language - User's language code
+ * @param {string} rashiId - e.g., 'mesh', 'vrishabh'
  */
-export const getOrFetchRashifal = async (zodiacSign, language) => {
+export const getOrFetchRashifal = async (rashiId) => {
+  if (!rashiId) return null;
+
   try {
     const today = new Date().toISOString().split('T')[0]; // "2024-03-20"
+    const cacheKey = `${CACHE_KEY_PREFIX}${rashiId}`;
     
     // 1. Check Local Storage first
-    const cachedData = await storageService.user.get(); // We store it in user profile or separate key
-    // Actually, let's use a dedicated method for direct access if possible, 
-    // but here we will read the specific rashifal cache key directly from IDB if needed.
-    // For simplicity, we'll implement a custom get/set here wrapping storageService logic if needed,
-    // or just trust the fetch logic.
-    
-    // Let's retrieve the specific cached object
-    // Note: storageService doesn't have a direct method for arbitrary keys, 
-    // so we will assume we store it in a specific 'rashifal_cache' object inside LocalStorage for speed.
-    const cacheString = localStorage.getItem(CACHE_KEY);
+    const cacheString = localStorage.getItem(cacheKey);
     
     if (cacheString) {
       const cache = JSON.parse(cacheString);
       
-      // If data is from TODAY and for the SAME Sign and Language
-      if (cache.date === today && cache.sign === zodiacSign && cache.lang === language) {
-        console.log('⚡ Using Cached Rashifal');
-        return cache.text;
+      // If data is from TODAY
+      if (cache.date === today) {
+        console.log(`⚡ Using Cached Rashifal for ${rashiId}`);
+        return cache.data;
       }
     }
 
-    // 2. If no cache, Fetch from API
-    console.log('🌍 Fetching Fresh Rashifal from Google...');
-    const freshText = await fetchDailyRashifal(zodiacSign, language);
+    // 2. If no cache or old data, Fetch from API
+    console.log(`🌍 Fetching Fresh Rashifal for ${rashiId}...`);
+    const freshData = await fetchDailyRashifal(rashiId);
 
-    if (freshText) {
+    if (freshData) {
       // 3. Save to Cache
       const newCache = {
         date: today,
-        sign: zodiacSign,
-        lang: language,
-        text: freshText
+        data: freshData
       };
-      localStorage.setItem(CACHE_KEY, JSON.stringify(newCache));
-      return freshText;
+      localStorage.setItem(cacheKey, JSON.stringify(newCache));
+      return freshData;
     }
 
     return null;
 
   } catch (error) {
     console.error('Rashifal Service Error:', error);
-    return "Stars are cloudy today. Please try again later.";
+    return "Aaj ke sitare badalo mein chip gaye hain. Kripya thodi der baad prayas karein.";
   }
 };
 
 /**
- * Clear cache (Useful for testing or force refresh)
+ * Clear all rashifal caches (Useful for testing or force refresh)
  */
-export const clearRashifalCache = () => {
-  localStorage.removeItem(CACHE_KEY);
+export const clearAllRashifalCache = () => {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.startsWith(CACHE_KEY_PREFIX)) {
+      localStorage.removeItem(key);
+    }
+  });
 };
 
 export default {
   getOrFetchRashifal,
-  clearRashifalCache
+  clearAllRashifalCache
 };
