@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { storageService } from '../services/storageService';
-import { getZodiacSign } from '../utils/zodiacUtils'; // Will be created in File 62
+import { helpers } from '../utils/helpers';
 
 const UserContext = createContext();
 
@@ -63,7 +63,7 @@ export const UserProvider = ({ children }) => {
       if (data.dob) {
         // Note: getZodiacSign will be available in utils later. 
         // If file 62 isn't made yet, this might error, but flow is correct.
-        zodiac = getZodiacSign(data.dob); 
+        zodiac = helpers.getZodiacSign(data.dob); 
       }
 
       const updatedUser = {

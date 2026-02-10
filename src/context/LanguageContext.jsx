@@ -46,14 +46,14 @@ export const LanguageProvider = ({ children }) => {
         // Note: These files will be created in Phase 4
         let module;
         switch (language) {
-          case 'hi': module = await import('../i18n/locales/hi.js'); break;
-          case 'ne': module = await import('../i18n/locales/ne.js'); break; // Nepali
-          case 'es': module = await import('../i18n/locales/es.js'); break;
-          case 'fr': module = await import('../i18n/locales/fr.js'); break;
-          case 'it': module = await import('../i18n/locales/it.js'); break;
-          case 'ko': module = await import('../i18n/locales/ko.js'); break;
+          case 'hi': module = await import('../locales/hi.js'); break;
+          case 'ne': module = await import('../locales/ne.js'); break; // Nepali
+          case 'es': module = await import('../locales/es.js'); break;
+          case 'fr': module = await import('../locales/fr.js'); break;
+          case 'it': module = await import('../locales/it.js'); break;
+          case 'ko': module = await import('../locales/ko.js'); break;
           case 'en': 
-          default:   module = await import('../i18n/locales/en.js'); break;
+          default:   module = await import('../locales/en.js'); break;
         }
         
         setTranslations(module.default || module);
@@ -61,7 +61,7 @@ export const LanguageProvider = ({ children }) => {
         console.error(`Failed to load language: ${language}`, error);
         // Fallback to English if file missing
         if (language !== 'en') {
-          const fallback = await import('../i18n/locales/en.js');
+          const fallback = await import('../locales/en.js');
           setTranslations(fallback.default);
         }
       }
