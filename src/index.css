@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🌌 Global Styles */
 :root {
   color-scheme: dark;
 }
@@ -10,14 +9,14 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #020617; /* midnight-950 */
-  color: #fff;
+  background-color: #020617;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 📜 Scrollbar Customization */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -31,29 +30,20 @@ body {
   border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-/* 📱 Safe Area Utilities (Fallback) */
+/* Safe Area Utilities - SIMPLIFIED TO FIX BUILD ERROR */
 .pt-safe {
-  padding-top: env(safe-area-inset-top, 20px);
+  padding-top: env(safe-area-inset-top);
 }
 
 .pb-safe {
-  padding-bottom: env(safe-area-inset-bottom, 20px);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .min-h-screen-safe {
-  min-height: 100vh; /* Fallback */
-  min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  min-height: 100vh;
 }
 
-/* 🎭 Text Glow Utility */
+/* Text Glow Utilities */
 .text-glow {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.text-glow-white {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
