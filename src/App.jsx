@@ -77,7 +77,7 @@ const AppContent = () => {
 };
 
 /**
- * 📱 MAIN APP COMPONENT
+ * 📱 MAIN APP COMPONENT really fuxked bro
  * All Context Providers Wrapped Here
  */
 const App = () => {
