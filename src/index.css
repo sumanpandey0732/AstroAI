@@ -2,101 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🌌 Global App Styles */
+/* 🌌 Global Styles */
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   color-scheme: dark;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-tap-highlight-color: transparent; /* Removes blue flash on tap */
 }
 
-html, body {
+body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0B0F19; /* Cosmic Dark */
-  color: #F3F4F6; /* Soft White */
-  overflow: hidden; /* Prevent body scroll, handle inside components */
-  overscroll-behavior-y: none; /* Disables pull-to-refresh on mobile */
+  background-color: #020617; /* midnight-950 */
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* 📱 Hide Scrollbar for App-like feel */
+/* 📜 Scrollbar Customization */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 6px;
 }
 
-/* ✨ Glassmorphism Utilities */
-.glass-panel {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-track {
+  background: #0f172a;
 }
 
-.glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
 }
 
-.glass-input {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
-.glass-input:focus {
-  border-color: #8B5CF6; /* Mystic Purple */
-  outline: none;
-  background: rgba(0, 0, 0, 0.4);
+/* 📱 Safe Area Utilities (Fallback) */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 20px);
 }
 
-/* 🌟 Text Gradients */
-.text-gradient-gold {
-  background: linear-gradient(to right, #F59E0B, #FCD34D);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
 }
 
-.text-gradient-mystic {
-  background: linear-gradient(to right, #C084FC, #818CF8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.min-h-screen-safe {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }
 
-/* 🖱️ Custom Selection Color */
-::selection {
-  background: #8B5CF6;
-  color: white;
+/* 🎭 Text Glow Utility */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* 🎭 Animations */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-/* 🛠️ Utility: Center Absolute */
-.center-absolute {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.text-glow-white {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}  left: 50%;
   transform: translate(-50%, -50%);
   }
