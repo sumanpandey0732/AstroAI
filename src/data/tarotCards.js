@@ -511,6 +511,7 @@ export const drawCards = (count = 1) => {
   return shuffled.slice(0, count);
 };
 
+const tarotCards = [
   // 🥤 SUIT OF CUPS (Water / Emotion) - Continued
   // ═══════════════════════════════════════════════════════════
   {

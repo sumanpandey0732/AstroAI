@@ -3,219 +3,117 @@
  * Collection of common utility functions used across the application.
  */
 
-// ═══════════════════════════════════════════════════════════
-// ⏱️ TIME & DELAY HELPERS
-// ═══════════════════════════════════════════════════════════
-
 /**
- * Pauses execution for a specified amount of time.
- * Useful for simulating API delays or waiting for animations.
- * @param {number} ms - Milliseconds to wait
- * @returns {Promise}
+ * Calculates the Zodiac sign based on date of birth (MM-DD or YYYY-MM-DD).
+ * @param {string} dob - Date of birth
+ * @returns {string} Zodiac sign name
  */
-export const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const getZodiacSign = (dob) => {
+  if (!dob) return '';
+  const date = new Date(dob);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 
-// ═══════════════════════════════════════════════════════════
-// 🎲 RANDOMIZATION HELPERS
-// ═══════════════════════════════════════════════════════════
-
-/**
- * Returns a random integer between min (inclusive) and max (inclusive).
- * @param {number} min
- * @param {number} max
- * @returns {number}
- */
-export const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  if ((month === 1 && day <= 19) || (month === 12 && day >= 22)) return 'Capricorn';
+  if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return 'Aquarius';
+  if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return 'Pisces';
+  if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return 'Aries';
+  if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return 'Taurus';
+  if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return 'Gemini';
+  if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) return 'Cancer';
+  if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return 'Leo';
+  if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return 'Virgo';
+  if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return 'Libra';
+  if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return 'Scorpio';
+  if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return 'Sagittarius';
+  return '';
 };
 
-/**
- * Returns a random item from an array.
- * @param {Array} array
- * @returns {*} Random item
- */
-export const getRandomItem = (array) => {
-  if (!array || array.length === 0) return null;
-  return array[Math.floor(Math.random() * array.length)];
-};
-
-/**
- * Shuffles an array using the Fisher-Yates algorithm.
- * Important for Tarot shuffling.
- * @param {Array} array
- * @returns {Array} New shuffled array
- */
-export const shuffleArray = (array) => {
-  const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-};
-
-// ═══════════════════════════════════════════════════════════
-// 📝 STRING MANIPULATION
-// ═══════════════════════════════════════════════════════════
-
-/**
- * Capitalizes the first letter of a string.
- * @param {string} string
- * @returns {string}
- */
-export const capitalize = (string) => {
-  if (!string) return '';
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-};
-
-/**
- * Truncates a string to a specific length and adds '...'.
- * @param {string} str
- * @param {number} length
- * @returns {string}
- */
-export const truncate = (str, length = 100) => {
-  if (!str) return '';
-  if (str.length <= length) return str;
-  return str.slice(0, length) + '...';
-};
-
-/**
- * Generates a unique ID (simple implementation).
- * @returns {string}
- */
-export const generateId = () => {
-  return Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
-};
-
-// ═══════════════════════════════════════════════════════════
-// 💾 DATA & VALIDATION
-// ═══════════════════════════════════════════════════════════
-
-/**
- * Safely parses JSON string.
- * @param {string} str - JSON string
- * @param {*} fallback - Fallback value if parsing fails
- * @returns {*}
- */
-export const safeJSONParse = (str, fallback = null) => {
-  try {
-    const data = JSON.parse(str);
-    return data || fallback;
-  } catch (e) {
-    return fallback;
-  }
-};
-
-/**
- * Checks if a value is empty (null, undefined, empty string, empty array, empty object).
- * @param {*} value
- * @returns {boolean}
- */
-export const isEmpty = (value) => {
-  if (value === null || value === undefined) return true;
-  if (typeof value === 'string') return value.trim().length === 0;
-  if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'object') return Object.keys(value).length === 0;
-  return false;
-};
-
-// ═══════════════════════════════════════════════════════════
-// 📳 MOBILE INTERACTION
-// ═══════════════════════════════════════════════════════════
-
-/**
- * Triggers haptic feedback (vibration) on supported devices.
- * @param {number} ms - Vibration duration in ms (default 50)
- */
-export const triggerHaptic = (ms = 50) => {
-  if (typeof navigator !== 'undefined' && navigator.vibrate) {
-    navigator.vibrate(ms);
-  }
-};
-
-/**
- * Copies text to clipboard.
- * @param {string} text
- * @returns {Promise<boolean>} success
- */
-export const copyToClipboard = async (text) => {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch (err) {
-    console.error('Failed to copy:', err);
-    return false;
-  }
-};
-
-/**
- * Uses the Web Share API to share content.
- * @param {Object} data - { title, text, url }
- * @returns {Promise<boolean>} success
- */
-export const shareContent = async (data) => {
-  if (typeof navigator !== 'undefined' && navigator.share) {
+export const helpers = {
+  getZodiacSign,
+  wait: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+  getRandomInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
+  getRandomItem: (array) => {
+    if (!array || array.length === 0) return null;
+    return array[Math.floor(Math.random() * array.length)];
+  },
+  shuffleArray: (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  },
+  capitalize: (string) => {
+    if (!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  },
+  truncate: (str, length = 100) => {
+    if (!str) return '';
+    if (str.length <= length) return str;
+    return str.slice(0, length) + '...';
+  },
+  generateId: () => Math.random().toString(36).substr(2, 9) + Date.now().toString(36),
+  safeJSONParse: (str, fallback = null) => {
     try {
-      await navigator.share(data);
+      const data = JSON.parse(str);
+      return data || fallback;
+    } catch (e) {
+      return fallback;
+    }
+  },
+  isEmpty: (value) => {
+    if (value === null || value === undefined) return true;
+    if (typeof value === 'string') return value.trim().length === 0;
+    if (Array.isArray(value)) return value.length === 0;
+    if (typeof value === 'object') return Object.keys(value).length === 0;
+    return false;
+  },
+  triggerHaptic: (ms = 50) => {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(ms);
+    }
+  },
+  copyToClipboard: async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
       return true;
     } catch (err) {
-      // User cancelled or error
+      console.error('Failed to copy:', err);
       return false;
     }
-  } else {
-    // Fallback: Copy to clipboard
-    if (data.url) {
-      return copyToClipboard(data.url);
+  },
+  shareContent: async (data) => {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share(data);
+        return true;
+      } catch (err) {
+        return false;
+      }
+    } else if (data.url) {
+      try {
+        await navigator.clipboard.writeText(data.url);
+        return true;
+      } catch (err) {
+        return false;
+      }
     }
     return false;
+  },
+  classNames: (...classes) => classes.filter(Boolean).join(' '),
+  scrollToTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+  getRelativeDateLabel: (date) => {
+    const today = new Date();
+    const target = new Date(date);
+    today.setHours(0, 0, 0, 0);
+    target.setHours(0, 0, 0, 0);
+    const diffTime = today - target;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays === -1) return 'Tomorrow';
+    return target.toLocaleDateString();
   }
-};
-
-// ═══════════════════════════════════════════════════════════
-// 🎨 UI HELPERS
-// ═══════════════════════════════════════════════════════════
-
-/**
- * Combines class names conditionally (tiny alternative to 'clsx' or 'classnames').
- * Usage: classNames('btn', isActive && 'active', 'p-4')
- * @param  {...any} classes
- * @returns {string}
- */
-export const classNames = (...classes) => {
-  return classes.filter(Boolean).join(' ');
-};
-
-/**
- * Scrolls the window to the top smoothly.
- */
-export const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-/**
- * Gets relative time string (e.g., "Today", "Yesterday").
- * Simple version for common use cases.
- * @param {Date} date
- * @returns {string}
- */
-export const getRelativeDateLabel = (date) => {
-  const today = new Date();
-  const target = new Date(date);
-  
-  // Reset hours for comparison
-  today.setHours(0,0,0,0);
-  target.setHours(0,0,0,0);
-  
-  const diffTime = today - target;
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-  if (diffDays === 0) return 'Today';
-  if (diffDays === 1) return 'Yesterday';
-  if (diffDays === -1) return 'Tomorrow';
-  
-  return target.toLocaleDateString();
 };

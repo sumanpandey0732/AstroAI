@@ -61,8 +61,6 @@ export const UserProvider = ({ children }) => {
       // Calculate Zodiac if DOB is present
       let zodiac = user.zodiacSign;
       if (data.dob) {
-        // Note: getZodiacSign will be available in utils later. 
-        // If file 62 isn't made yet, this might error, but flow is correct.
         zodiac = helpers.getZodiacSign(data.dob); 
       }
 
