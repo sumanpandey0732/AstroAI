@@ -6,98 +6,73 @@ export default {
   ],
   theme: {
     extend: {
-      // ═══════════════════════════════════════════════════════════
-      // 🎨 COSMIC COLOR PALETTE
-      // ═══════════════════════════════════════════════════════════
       colors: {
-        // Primary Cosmic Colors
-        cosmic: {
-          900: '#0a0a1a',
-          850: '#0d0d24',
-          800: '#10102e',
-          750: '#141438',
-          700: '#181842',
-          650: '#1c1c4c',
-          600: '#202056',
-          550: '#242460',
-          500: '#28286a',
-          450: '#2c2c74',
-          400: '#30307e',
-          350: '#343488',
-          300: '#383892',
-          250: '#3c3c9c',
-          200: '#4040a6',
-          150: '#4444b0',
-          100: '#4848ba',
-          50: '#5252c4',
-        },
-
-        // Midnight Blue Shades
         midnight: {
           950: '#020617',
           900: '#0f172a',
-          850: '#131c33',
           800: '#1e293b',
-          750: '#243044',
-          700: '#334155',
-          650: '#3d4a5e',
-          600: '#475569',
-          500: '#64748b',
-          400: '#94a3b8',
-          300: '#cbd5e1',
-          200: '#e2e8f0',
-          100: '#f1f5f9',
-          50: '#f8fafc',
         },
-
-        // Deep Purple Shades
-        mystic: {
-          950: '#1a0a2e',
-          900: '#2d1b4e',
-          850: '#362258',
-          800: '#3f2a62',
-          750: '#48316c',
-          700: '#513976',
-          650: '#5a4080',
-          600: '#63488a',
-          500: '#7c5dac',
-          400: '#9678c4',
-          300: '#b094dc',
-          200: '#cab0f4',
-          150: '#d9c5f9',
-          100: '#e8dbfd',
-          50: '#f5f0ff',
+        cosmic: {
+          900: '#0a0a1a',
         },
-
-        // Accent Glow Colors
-        glow: {
-          cyan: '#00f5ff',
-          blue: '#4d9fff',
-          purple: '#a855f7',
-          pink: '#ec4899',
-          violet: '#8b5cf6',
-          indigo: '#6366f1',
-          neon: '#00ffff',
-          soft: '#7dd3fc',
+        cyan: {
+          400: '#22d3ee',
+          500: '#06b6d4',
         },
-
-        // Gradient Stop Colors
-        gradient: {
-          start: '#1e1b4b',
-          middle: '#312e81',
-          end: '#4c1d95',
-          cosmic1: '#0f0c29',
-          cosmic2: '#302b63',
-          cosmic3: '#24243e',
+        purple: {
+          400: '#c084fc',
+          500: '#a855f7',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      spacing: {
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+        'fade-in-down': 'fadeInDown 0.5s ease-out forwards',
+        'scale-in': 'scaleIn 0.3s ease-out forwards',
+        'pulse-slow': 'pulse 3s infinite',
+        'scan-line': 'scanLine 2s linear infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-
-        // Zodiac Element Colors
-        element: {
-          fire: '#ef4444',
-          earth: '#84cc16',
-          air: '#38bdf8',
-          water: '#06b6d4',
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        scanLine: {
+          '0%': { top: '0%', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { top: '100%', opacity: '0' },
+        },
+      },
+      boxShadow: {
+        'glow-sm': '0 0 10px rgba(168, 85, 247, 0.4)',
+        'glow-md': '0 0 20px rgba(168, 85, 247, 0.6)',
+        'glow-cyan-sm': '0 0 10px rgba(34, 211, 238, 0.4)',
+        'cosmic': '0 0 30px rgba(139, 92, 246, 0.3)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+      },
+    },
+  },
+  plugins: [],
+};        },
 
         // Tarot Colors
         tarot: {
