@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '../../context/NavigationContext'; // Using existing context
+import { useNavigation } from '../../hooks/useNavigation'; // Using existing context
 import { HomeIcon, PalmIcon, TarotIcon, ChatIcon, ProfileIcon } from '../../assets/icons';
 
 /**

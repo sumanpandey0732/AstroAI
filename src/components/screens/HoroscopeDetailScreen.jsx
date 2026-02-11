@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
-import { shareContent } from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import PageTransition from '../common/PageTransition';
 import Container from '../common/Container';
 import GlassCard from '../common/GlassCard';
@@ -85,7 +85,7 @@ const HoroscopeDetailScreen = () => {
   // Share horoscope
   const handleShare = async () => {
     const text = `${sign.symbol} ${sign.name} - Daily Horoscope\n${today}\n\n${horoscope.overall}\n\n💕 Love: ${horoscope.love}\n💼 Career: ${horoscope.career}\n\n🎨 Lucky Color: ${horoscope.luckyColor}\n🔢 Lucky Number: ${horoscope.luckyNumber}\n\nGet yours at AstroAI! 🔮`;
-    const shared = await shareContent({ title: `${sign.name} Horoscope`, text });
+    const shared = await helpers.shareContent({ title: `${sign.name} Horoscope`, text });
     if (shared) showToast('success', 'Shared successfully!');
   };
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useUser } from '../../hooks/useUser';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
-import { shareContent } from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import PageTransition from '../common/PageTransition';
 import Container from '../common/Container';
 import Header from '../common/Header';
@@ -44,7 +44,7 @@ const SettingsScreen = () => {
 
   // 📤 Share App
   const handleShareApp = async () => {
-    await shareContent({
+    await helpers.shareContent({
       title: 'AstroAI - Mystic Guide',
       text: 'Check out AstroAI! It reads your palm and tarot cards with AI. 🔮✨',
       url: window.location.origin, // Current URL

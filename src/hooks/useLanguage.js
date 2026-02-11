@@ -14,13 +14,7 @@ export const useLanguage = () => {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   
-  return {
-    language: context.language,           // Current language code (e.g. 'en')
-    changeLanguage: context.changeLanguage, // Function to update language
-    t: context.t,                         // Function to translate text
-    isLoading: context.isLoading,         // Is language file loading?
-    supportedLanguages: context.languages // List of all available languages
-  };
+  return context;
 };
 
 export default useLanguage;

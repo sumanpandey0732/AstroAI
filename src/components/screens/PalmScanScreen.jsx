@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useToast } from '../../hooks/useToast';
 import { useLanguage } from '../../hooks/useLanguage';
 import PageTransition from '../common/PageTransition';

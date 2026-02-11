@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useUser } from '../../hooks/useUser';
 import { useLanguage } from '../../hooks/useLanguage';
 import { SettingsIcon } from '../../assets/icons'; // Using our custom icons

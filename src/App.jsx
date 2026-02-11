@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { AppProvider } from './context/AppProvider';
-import { NavigationProvider, useNavigation } from './context/NavigationContext';
+import { NavigationProvider } from './context/NavigationContext';
+import { useNavigation } from './hooks/useNavigation';
 import { UserProvider } from './context/UserContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { ToastProvider } from './context/ToastContext';

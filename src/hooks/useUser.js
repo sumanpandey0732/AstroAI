@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UserContext } from '../context/UserContext';
+import UserContext from '../context/UserContext';
 
 /**
  * 👤 USE USER HOOK
@@ -13,31 +13,7 @@ const useUser = () => {
     throw new Error('useUser must be used within UserContext Provider');
   }
 
-  const { user, setUser } = context;
-
-  // 💾 Update User Profile
-  const updateUserProfile = (profileData) => {
-    const updatedUser = {
-      ...user,
-      ...profileData,
-      updatedAt: new Date().toISOString(),
-    };
-    setUser(updatedUser);
-    localStorage.setItem('astroai_user', JSON.stringify(updatedUser));
-  };
-
-  // ✅ Mark Onboarding Complete
-  const completeOnboarding = () => {
-    updateUserProfile({ hasCompletedOnboarding: true });
-  };
-
-  // 🗑️ Delete User Data
-  const deleteUserData = () => {
-    setUser(null);
-    localStorage.removeItem('astroai_user');
-    localStorage.removeItem('astroai_disclaimer_accepted');
-    localStorage.removeItem('astroai_chat_history');
-  };
+  const { user, history, updateProfile, addToHistory, resetUser, isLoading } = context;
 
   // 🔍 Check if profile is complete
   const isProfileComplete = () => {
@@ -46,9 +22,11 @@ const useUser = () => {
 
   return {
     user,
-    updateUserProfile,
-    completeOnboarding,
-    deleteUserData,
+    history,
+    updateProfile,
+    addToHistory,
+    resetUser,
+    isLoading,
     isProfileComplete,
   };
 };

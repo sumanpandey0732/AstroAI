@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import PageTransition from '../common/PageTransition';
 import Container from '../common/Container';
 import Header from '../common/Header';

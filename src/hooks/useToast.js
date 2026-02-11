@@ -15,11 +15,7 @@ export const useToast = () => {
     throw new Error('useToast must be used within a ToastProvider');
   }
   
-  return {
-    toasts: context.toasts,       // Array of active toasts
-    showToast: context.showToast, // Function to trigger a toast
-    removeToast: context.removeToast // Function to dismiss specific toast
-  };
+  return context;
 };
 
 export default useToast;

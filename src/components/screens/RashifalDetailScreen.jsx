@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
-import { shareContent } from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import PageTransition from '../common/PageTransition';
 import Container from '../common/Container';
 import Header from '../common/Header';
@@ -52,7 +52,7 @@ const RashifalDetailScreen = () => {
   // Share Handler
   const handleShare = async () => {
     const text = `🕉️ Aaj Ka Rashifal (${t(rashi.nameKey)})\n📅 ${today}\n\n${content.overview}\n\n✨ AstroAI App se dekhein!`;
-    const shared = await shareContent({ title: 'Rashifal', text });
+    const shared = await helpers.shareContent({ title: 'Rashifal', text });
     if (shared) showToast('success', 'Rashifal shared!');
   };
 

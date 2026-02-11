@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
 import { fetchDailyRashifal } from '../../services/serpApiService'; // We'll verify this service later

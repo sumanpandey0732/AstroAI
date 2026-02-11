@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
-import { shareContent } from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import PageTransition from '../common/PageTransition';
 import Container from '../common/Container';
 import GlassCard from '../common/GlassCard';
@@ -59,7 +59,7 @@ const TarotReadingScreen = () => {
   const handleShare = async () => {
     const cardNames = cards.map((c) => c.name).join(', ');
     const text = `🃏 My Tarot Reading by AstroAI\n\nCards: ${cardNames}\nCategory: ${category}\n\n${reading?.substring(0, 200)}...\n\nGet your reading at AstroAI!`;
-    const shared = await shareContent({ title: 'My Tarot Reading', text });
+    const shared = await helpers.shareContent({ title: 'My Tarot Reading', text });
     if (shared) showToast('success', 'Shared successfully!');
   };
 

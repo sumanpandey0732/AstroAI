@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useUser } from '../../hooks/useUser';
 import { onboardingSlides } from '../../data/onboardingSlides'; // Import data we just made

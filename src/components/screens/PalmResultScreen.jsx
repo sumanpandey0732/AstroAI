@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../../context/NavigationContext';
+import { useNavigation } from '../../hooks/useNavigation';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useToast } from '../../hooks/useToast';
 import PageTransition from '../common/PageTransition';
@@ -8,7 +8,7 @@ import GlassCard from '../common/GlassCard';
 import Button from '../common/Button';
 import BottomNav from '../common/BottomNav';
 import { PalmIcon } from '../../assets/icons';
-import { shareContent } from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 
 /**
  * 🖐️ PALM RESULT SCREEN
@@ -95,7 +95,7 @@ const PalmResultScreen = () => {
   // Share Result
   const handleShare = async () => {
     const shareText = `🔮 My Palm Reading by AstroAI\n\n${result.summary}\n\nDownload AstroAI for your own reading!`;
-    const shared = await shareContent({
+    const shared = await helpers.shareContent({
       title: 'My Palm Reading - AstroAI',
       text: shareText,
     });
