@@ -503,15 +503,15 @@ export const tarotCards = [
 ];
 
 // Helper to get a card by ID
-export const getCardById = (id) => tarotCards.find(card => card.id === id);
+export const getCardById = (id) => tarotCards_2.find(card => card.id === id);
 
 // Helper to draw random cards
 export const drawCards = (count = 1) => {
-  const shuffled = [...tarotCards].sort(() => 0.5 - Math.random());
+  const shuffled = [...tarotCards_2].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 };
 
-const tarotCards = [
+const tarotCards_2 = [
   // 🥤 SUIT OF CUPS (Water / Emotion) - Continued
   // ═══════════════════════════════════════════════════════════
   {
@@ -1055,3 +1055,4 @@ const tarotCards = [
     },
     image: 'pentacles_king.jpg',
   },
+]; export default tarotCards;
